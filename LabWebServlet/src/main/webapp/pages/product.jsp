@@ -9,7 +9,8 @@
 <link rel="stylesheet" type="text/css" href="../css/main.css" />
 
 
-<title>Git Product</title>
+<title>Hello Product</title>
+
 
 <script type="text/javascript" src="../js/json2.js"></script>
 <script type="text/javascript" src="../js/product.js"></script>

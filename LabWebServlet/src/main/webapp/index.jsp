@@ -11,7 +11,7 @@
 <body>
 
 
-<h3>Git2 Welcome ${user.custid}</h3>
+<h3>HelloGit Welcome ${user.custid}</h3>
 
 
 <h3><a href="<c:url value="/secure/login.jsp" />">Login</a></h3>
