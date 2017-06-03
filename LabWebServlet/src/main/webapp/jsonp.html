@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>JSON with Padding</title>
+<script type="text/javascript">
+var path = "http://localhost:8080/LabWebServlet02/jsonp.view";
+var request = null;
+function doClick() {
+	var param = document.getElementsByTagName("input")[0].value;
+	request = new XMLHttpRequest();
+	request.onreadystatechange=callback;
+	request.open("GET", path+"?param="+param);
+	request.send(null);
+	document.getElementsByTagName("input")[0].value = "";
+}
+function callback() {
+	if(request.readyState==4) {
+		if(request.status==200) {
+			console.log("result="+request.responseText);
+		} else {
+			alert("Error:"+request.status);
+		}
+	}
+}
+function doJsonWithPadding() {
+	var param = document.getElementsByTagName("input")[0].value;
+	var scriptElement = document.createElement("script");
+ 	scriptElement.type = "text/javascript";
+ 	scriptElement.src = path+"?callback=method1&param="+param;
+ 	document.getElementsByTagName("head")[0].appendChild(scriptElement);
+}
+function method1(dataFromServer) {
+	console.log("dataFromServer="+dataFromServer);		
+}
+</script>
+
+</head>
+<body>
+
+<h3>請輸入資料</h3>
+<table>
+	<tr>
+		<td>Param : </td>
+		<td><input type="text" name="Param"></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>　</td>
+		<td align="right"><input type="button" value="Normal" onclick="doClick()"></td>
+	</tr>
+	<tr>
+		<td>　</td>
+		<td align="right"><input type="button" value="JsonP" onclick="doJsonWithPadding()"></td>
+	</tr>
+</table>
+
+</body>
+</html>
