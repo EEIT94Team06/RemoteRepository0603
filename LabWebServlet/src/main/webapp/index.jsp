@@ -10,7 +10,9 @@
 </head>
 <body>
 
-<h3>G Welcome ${user.custid}</h3>
+
+<h3>HelloGit Welcome ${user.custid}</h3>
+
 
 <h3><a href="<c:url value="/secure/login.jsp" />">Login</a></h3>
 <h3><a href="${pageContext.request.contextPath}/pages/product.jsp">Poduct</a></h3>
